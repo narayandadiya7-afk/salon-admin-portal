@@ -1,0 +1,250 @@
+/* ==========================================
+   TABLE COMPONENT STYLES - Theme-Aware
+   ========================================== */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--theme-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.thead {
+  text-align: center;
+  background: var(--theme-primary);
+  color: #ffffff;
+  font-size: var(--font-size-sm);
+  border-bottom: 1px solid var(--theme-border);
+  cursor: pointer;
+  line-height: 1.5rem;
+  font-weight: var(--font-weight-semibold);
+}
+
+.rowFlex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+}
+
+.rowFlex.leftAlign {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  gap: var(--spacing-xs);
+}
+
+.rowFlex.rightAlign {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+  gap: var(--spacing-xs);
+}
+
+.rowFlex.centerAlign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--spacing-xs);
+}
+
+.tableBody {
+  font-size: var(--font-size-sm);
+  background-color: var(--theme-surface);
+  color: var(--theme-text);
+}
+
+.tableBody .tableRow {
+  transition: all var(--transition-fast) var(--transition-timing);
+  border-bottom: 1px solid var(--theme-border-light);
+}
+
+.tableBody .tableRow:hover {
+  background-color: var(--theme-hover);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.tableData {
+  padding: 0;
+  width: 4px;
+}
+
+.tableData {
+  width: 4px;
+  height: 60px;
+  border-radius: var(--radius-sm);
+  background-color: var(--theme-surface);
+  transition: all var(--transition-fast) var(--transition-timing);
+}
+
+.tr:hover td {
+  cursor: pointer;
+  color: var(--theme-text);
+}
+
+.tr:hover .td.highlight div {
+  transform: scaleX(3);
+}
+
+.tableColumn {
+  border-bottom: 1px solid var(--theme-border);
+  text-align: center;
+  padding: var(--spacing-md) var(--spacing-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--theme-text);
+}
+
+.tdFlex.leftAlign {
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.tdFlex.rightAlign {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.tdFlex.centerAlign {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.tableRow {
+  text-align: center;
+  border-bottom: 1px solid var(--theme-border-light);
+  padding: var(--spacing-md) var(--spacing-sm);
+}
+
+.firstHeading,
+.lastHeading {
+  text-align: center;
+  font-weight: var(--font-weight-semibold);
+}
+
+.input {
+  width: 100%;
+  padding: var(--spacing-md);
+  font-size: var(--font-size-base);
+  border: 1px solid var(--theme-border);
+  border-radius: var(--radius-md);
+  background-color: var(--theme-surface);
+  color: var(--theme-text);
+  transition: border-color var(--transition-fast) var(--transition-timing);
+}
+
+.input:hover {
+  border-color: var(--theme-primary);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--theme-primary);
+  box-shadow: 0 0 0 2px var(--theme-primary-light);
+}
+
+.error-message {
+  color: var(--theme-error);
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-xs);
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.submit-button,
+.cancel-button {
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-base);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-fast) var(--transition-timing);
+}
+
+.submit-button {
+  background-color: var(--theme-primary);
+  color: #ffffff;
+}
+
+.submit-button:hover {
+  background-color: var(--theme-primary-hover);
+}
+
+.submit-button:active {
+  background-color: var(--theme-primary-active);
+}
+
+.cancel-button {
+  background-color: var(--theme-hover);
+  color: var(--theme-text);
+  border: 1px solid var(--theme-border);
+}
+
+.cancel-button:hover {
+  background-color: var(--theme-active);
+  border-color: var(--theme-text-secondary);
+}
+
+.tableHead {
+  background-color: var(--theme-hover);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  z-index: 1;
+  position: sticky;
+  top: 0;
+  color: var(--theme-text);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media screen and (max-width: 768px) {
+  .tableBody {
+    display: block;
+  }
+
+  .tableRow {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-sm);
+  }
+
+  .tableColumn {
+    padding: var(--spacing-sm);
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .submit-button,
+  .cancel-button {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .thead {
+    font-size: var(--font-size-xs);
+  }
+
+  .tableBody {
+    font-size: var(--font-size-xs);
+  }
+}

@@ -1,0 +1,58 @@
+/*
+*  advance.module.css
+*  This css used to style the advance-panel components
+*/
+.iconContainer {
+  cursor: pointer;
+  position: fixed;
+  top: 90%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: right 0.3s ease;
+}
+
+.openPanelWidth {
+  right: 70px;
+}
+.closePanelWidth {
+  right: 0;
+}
+
+.icon {
+  color: var(--bs-primary);
+  font-size: 20px;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    font-size 0.3s ease;
+}
+
+.icon:hover {
+  font-size: 25px;
+  transform: scale(1.2); /* Scale up the icon */
+  color: var(--bs-priimary-dark); /* Optionally change color on hover */
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optionally add shadow */
+}
+
+.parentContainer {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.verticalText {
+  font-size: 18px;
+  writing-mode: vertical-rl; /* Change text orientation */
+  letter-spacing: 2px; /* Add space between letters */
+  text-orientation: upright; /* Ensure characters are upright */
+}

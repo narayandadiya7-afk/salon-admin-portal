@@ -1,0 +1,207 @@
+/**
+ * Sample.css
+ * All the css for List Component and Form Component of rawer-form will be wrote here only.
+ */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100vh;
+  background-color: white;
+  box-shadow: -2px 0px 4px rgba(0, 0, 0, 0.2);
+  overflow: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.formHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px 0 10px;
+  align-items: center;
+}
+
+.borderform {
+  border-color: 1px solid hsl(0, 0%, 70%);
+  border-top: 1px solid hsl(0, 0%, 70%);
+  border-left: 1px solid hsl(0, 0%, 70%);
+  border-right: 1px solid hsl(0, 0%, 70%);
+  border-bottom: 1px solid hsl(0, 0%, 70%);
+  border-radius: 5px;
+}
+
+.borderform:focus-visible {
+  outline: 1px solid #2486ff;
+}
+
+.borderform:focus {
+  outline: 1px solid #2486ff;
+}
+
+.tableRow_new th {
+  padding: 8px;
+}
+
+.user_sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.user_box {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.user_detail {
+  height: 50px;
+  padding: 0.6em 0;
+  /* margin-bottom: 5px; */
+}
+
+.user_pic {
+  position: relative;
+  /* background: url(/assets/images/wnix-logo.png); */
+  height: 50px;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 35% 50%;
+  margin-left: 1.6rem;
+}
+
+.user_pic_compact {
+  mix-blend-mode: darken;
+  position: relative;
+  /* background: url(/assets/images/wnix-mnml-logo.png); */
+  height: 50px;
+  width: 80%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  /* margin-left: 1.6rem; */
+}
+
+.user_menu {
+  flex: 1;
+  overflow: hidden;
+}
+
+.user_menu .item {
+  transition: all 100ms ease-in;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  justify-content: space-between;
+  color: #696969;
+  cursor: pointer;
+  padding: 0.72857143em 1.14285714em;
+  padding-top: 0.928571em !important;
+  padding-bottom: 0.828571em !important;
+}
+
+.user_menu .item:hover {
+  background: rgba(255, 102, 0, 0.1);
+  border-radius: 0em;
+  box-shadow: none;
+}
+
+.user_menu .item.active {
+  background: #545454;
+  border-radius: 0em;
+  box-shadow: none;
+  color: #ffffff !important;
+}
+
+.user_menu .item a {
+  width: 100%;
+  text-decoration: none !important;
+  color: #696969;
+}
+
+.user_menu .item.active a {
+  color: #fff;
+}
+
+.sub_menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.sub_menu .user_menu .item.active {
+  background: #727272;
+}
+
+.sub_menu .sub_menu .user_menu .item.active {
+  background: #838383;
+  color: black;
+}
+
+.sub_menu .user_menu .item .menu_name {
+  padding: 0 !important;
+  padding-left: 0.7rem !important;
+}
+
+.user_menu .item .item:hover {
+  background-color: transparent !important;
+}
+
+.sub_menu .user_menu .item a {
+  color: #fff;
+  text-decoration: none;
+  color: #696969;
+  width: 100%;
+}
+.sub_menu .user_menu .item.active a {
+  color: #fff;
+}
+
+.primaryColor {
+  color: var(--bs-primary);
+}
+
+.menu_name {
+  padding-left: 10px;
+}
+.menuSection {
+  margin-top: 1rem;
+  height: calc(100vh - 65px);
+  overflow-y: auto;
+  padding-bottom: 10px;
+}
+.iconStyle {
+  width: 100%;
+  display: flex;
+}
+.spanOfInconStyle {
+  width: 10%;
+}
+.spanDispName {
+  width: 90%;
+}
+.linkStyle {
+  width: 100%;
+  display: flex;
+}
+.linkSpan {
+  width: 10%;
+}
+
+@media (max-width: 1450px) {
+  .user_menu .item {
+    font-size: 0.7em;
+  }
+}
+@media (max-width: 1050px) {
+  .user_menu .item {
+    font-size: 0.5em;
+  }
+}
+@media (max-width: 750px) {
+  .user_menu .item {
+    font-size: 0.4em;
+  }
+}

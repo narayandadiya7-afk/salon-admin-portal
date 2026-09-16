@@ -1,0 +1,36 @@
+.footer {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+  align-items: center;
+  background-color: var(--bs-primary-gradient);
+  height: 1vh;
+  color: white;
+  font-size: 12px;
+}
+.footerCondition {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+  .footer {
+    width: -webkit-fill-available;
+  }
+}
+@media screen and (max-width: 500px) {
+  .footer {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .footer {
+    font-size: 8px;
+  }
+}

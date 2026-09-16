@@ -1,0 +1,280 @@
+/* Custom Dropdown - Cleaned & Optimized */
+
+/* Dropdown Container Animations */
+.transitionDivOut {
+  display: none;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+  width: -webkit-fill-available !important;
+  border: 1px solid var(--theme-border);
+  border-radius: var(--radius-sm);
+  margin-top: var(--spacing-sm);
+  animation: outAnimation 270ms ease-out;
+  animation-fill-mode: forwards;
+  color: var(--theme-text-secondary);
+}
+
+.transitionDivIn {
+  right: 0;
+  position: absolute;
+  z-index: 1000;
+  width: -webkit-fill-available !important;
+  border: 1px solid var(--theme-border);
+  border-radius: var(--radius-sm);
+  margin-top: var(--spacing-sm);
+  background: var(--theme-surface);
+  box-shadow: var(--shadow-md);
+  animation: inAnimation 250ms ease-in;
+  color: var(--theme-text-secondary);
+}
+
+@keyframes inAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes outAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+/* Icon Positioning */
+.iconCaret {
+  position: absolute;
+  right: 1vw;
+  transform: translateY(-50%);
+  color: var(--theme-text-tertiary);
+}
+
+.iconCaretFull {
+  position: absolute;
+  right: 1.8vw;
+  transform: translateY(-50%);
+  color: var(--theme-text-tertiary);
+}
+
+.iconCaret1 {
+  position: absolute;
+  right: 6%;
+  transform: translateY(-50%);
+  color: var(--theme-text-tertiary);
+}
+
+.iconCircle {
+  position: absolute;
+  right: 25px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--theme-text-secondary);
+  transition: color 0.2s;
+}
+
+.iconCircle:hover {
+  color: var(--theme-primary);
+}
+
+.iconCircleFull {
+  position: absolute;
+  right: 2.8vw;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--theme-text-secondary);
+  transition: color 0.2s;
+}
+
+.iconCircleFull:hover {
+  color: var(--theme-primary);
+}
+
+/* Hover States */
+.hoverElement:hover {
+  background: var(--theme-hover) !important;
+}
+
+.hoverElement1:hover {
+  background: var(--theme-surface) !important;
+}
+
+/* Text Styles */
+.primaryColor {
+  color: var(--theme-text);
+  margin-left: var(--spacing-xs);
+}
+
+.primaryColor2 {
+  cursor: pointer;
+  color: var(--theme-primary);
+  transition: color 0.2s;
+}
+
+.primaryColor2:hover {
+  color: var(--theme-primary-hover);
+}
+
+.lables {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  outline: none;
+  font-size: 13px;
+  padding: var(--spacing-xs) 0;
+}
+
+.errorLabel {
+  padding-left: var(--spacing-sm) !important;
+  padding-right: var(--spacing-sm) !important;
+  color: var(--theme-error);
+}
+
+/* Loading State */
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-base);
+  font-size: 14px;
+  color: var(--theme-text);
+  background-color: var(--theme-background);
+}
+
+/* Disabled State */
+.disabled {
+  padding: var(--spacing-sm);
+  border: 1px solid var(--theme-border) !important;
+  border-radius: var(--radius-sm);
+  background-color: var(--theme-background);
+  opacity: 0.6;
+  cursor: not-allowed;
+  outline: none;
+}
+
+.disableClassName {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Container Styles */
+.mainDivStyle,
+.fullPageForm,
+.mainDivStyle1,
+.mainDivStyle3,
+.mainDivStyle5 {
+  position: relative;
+  flex: 1;
+}
+
+.labelColor {
+  color: var(--theme-error);
+}
+
+/* Scrollable Content */
+.scrollableDivRefStyle {
+  overflow: auto;
+  max-height: 245px;
+  background: var(--theme-surface);
+  font-size: 14px;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar Styling */
+.scrollableDivRefStyle::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollableDivRefStyle::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollableDivRefStyle::-webkit-scrollbar-thumb {
+  background: var(--theme-border);
+  border-radius: 3px;
+}
+
+.scrollableDivRefStyle::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-text-tertiary);
+}
+
+.divLabelStyle {
+  cursor: pointer;
+  padding: var(--spacing-sm) var(--spacing-base);
+  transition: background 0.2s;
+}
+
+.divLabelStyle:hover {
+  background: var(--theme-hover);
+}
+
+.eCustomDropdownType {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--spacing-base) var(--spacing-sm);
+}
+
+/* Input Styles */
+.input {
+  padding: var(--spacing-xs);
+  width: -webkit-fill-available;
+  border: 1px solid var(--theme-border);
+  border-radius: var(--radius-sm);
+  background: var(--theme-surface);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input:hover {
+  cursor: pointer;
+  border-color: var(--theme-primary) !important;
+}
+
+.input:focus {
+  cursor: text;
+  border-color: var(--theme-primary) !important;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+}
+
+.inputWidget,
+.inputWidgetWithoutHeader {
+  color: var(--theme-text);
+  font-size: 1rem;
+  padding: var(--spacing-xs);
+  text-align: center;
+  border: none !important;
+  border-radius: var(--radius-sm);
+  background: var(--theme-surface);
+  outline: none;
+}
+
+.inputWidget {
+  height: 3vh;
+}
+
+.inputWidgetWithoutHeader {
+  height: 6.8vh;
+}
+
+.inputWidget::placeholder,
+.inputWidgetWithoutHeader::placeholder {
+  font-size: 14px;
+  color: var(--theme-text-tertiary);
+}
+
+/* Responsive */
+@media screen and (max-width: 756px) {
+  .input,
+  .full {
+    width: -webkit-fill-available !important;
+  }
+}

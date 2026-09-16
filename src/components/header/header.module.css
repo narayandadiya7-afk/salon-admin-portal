@@ -1,0 +1,160 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: black;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .logo {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .menuToggle {
+    display: none;
+  }
+  
+  .menuButton {
+    display: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 2;
+  }
+  
+  .menuIcon {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 3px auto;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menuItem {
+    margin-right: 15px;
+  }
+  
+  .menuItem:last-child {
+    margin-right: 0;
+  }
+  
+  .menuItem a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+  
+  /* Media Query for Mobile Menu */
+  @media (max-width: 768px) {
+    .menuToggle:checked + .menu {
+      display: block;
+    }
+  
+    .menuButton {
+      display: block;
+    }
+  
+    .menuIcon {
+      transform: rotate(0);
+    }
+  
+    .menuToggle:checked + .menuButton .menuIcon {
+      transform: rotate(45deg);
+    }
+  
+    .menuToggle:checked + .menuButton .menuIcon:before,
+    .menuToggle:checked + .menuButton .menuIcon:after {
+      transform: rotate(90deg);
+    }
+  
+    .menu {
+      position: absolute;
+      background-color: #333;
+      width: 100%;
+      top: 60px;
+      left: 0;
+      text-align: center;
+      display: none;
+      flex-direction: column;
+      z-index: 1;
+    }
+  
+    .menuItem {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  
+
+  
+  .logoContainer {
+    flex: 1;
+  }
+  
+  .logo {
+    display: block;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .menuContainer {
+    flex: 3;
+  }
+  
+  .menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .menuItem {
+    margin-right: 20px;
+  }
+  
+  .menuItemWithSubmenu {
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 130px;
+    height: 150px;
+  }
+  
+  .menuItemWithSubmenu:hover .submenu {
+    display: block;
+  }
+  
+  .submenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .submenu li {
+    margin-bottom: 8px;
+  }

@@ -1,0 +1,17 @@
+/* ==========================================
+   APP ROOT STYLES
+   ========================================== */
+
+.App {
+  min-height: 100vh;
+  background-color: var(--theme-background);
+  color: var(--theme-text);
+  transition: background-color var(--transition-base) var(--transition-timing),
+              color var(--transition-base) var(--transition-timing);
+}
+
+/* App container for consistent theming */
+#root {
+  min-height: 100vh;
+  background-color: var(--theme-background);
+}

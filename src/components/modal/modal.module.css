@@ -1,0 +1,62 @@
+/* Custom Modal - Cleaned & Ant Design Aligned */
+
+.antModalBody {
+  overflow-y: auto;
+}
+
+.fullScreen {
+  top: 0;
+  height: 90vh;
+  max-width: 93vw;
+  margin-top: var(--spacing-xl);
+}
+
+.normalScreen {
+  margin-top: var(--spacing-xl);
+}
+
+/* Custom Footer */
+.customFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-base);
+  background: var(--theme-surface);
+}
+
+.footerText {
+  cursor: pointer;
+  color: var(--theme-text);
+  font-size: 14px;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+}
+
+.footerText:hover {
+  background: var(--theme-hover);
+}
+
+.buttonFooterText {
+  cursor: pointer;
+  color: var(--theme-surface);
+  background-color: var(--theme-primary);
+  font-size: 14px;
+  padding: var(--spacing-xs) var(--spacing-base);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+  border: none;
+}
+
+.buttonFooterText:hover {
+  background-color: var(--theme-primary-hover);
+}
+
+.buttonFooterText:active {
+  background-color: var(--theme-primary-active);
+}
+
+/* Modal No Padding */
+.noPaddingModal .ant-modal-body {
+  padding: 0 !important;
+}

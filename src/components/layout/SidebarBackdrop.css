@@ -1,0 +1,20 @@
+/* Backdrop overlay for mobile sidebar */
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999; /* Below sidebar (1000) but above content */
+  transition: opacity 0.3s ease;
+}
+
+/* Show backdrop on mobile when sidebar is open */
+@media (max-width: 768px) {
+  .sidebar-backdrop.active {
+    display: block;
+    opacity: 1;
+  }
+}

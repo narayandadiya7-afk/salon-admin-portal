@@ -1,0 +1,130 @@
+/* ==========================================
+   LAYOUT STYLES - Theme-Aware
+   ========================================== */
+
+/* Sidebar Styles */
+.sidebar {
+  transition: width var(--transition-base) var(--transition-timing);
+  height: 100vh;
+  overflow: hidden;
+  background: var(--theme-surface);
+  border-right: 1px solid var(--theme-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.advanceSidebar {
+  transition: width var(--transition-base) var(--transition-timing);
+  height: 100vh;
+  overflow: hidden;
+  background: var(--theme-surface);
+  border-right: 1px solid var(--theme-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.advanceSidebarExpanded {
+  width: 3.5vw;
+}
+
+.advanceSidebarCollapsed {
+  width: 0vw;
+}
+
+.sidebarExpanded {
+  width: 15vw;
+  min-width: 200px;
+}
+
+.sidebarCollapsed {
+  width: 3.5vw;
+  min-width: 60px;
+}
+
+/* Content Area */
+.content {
+  transition: width var(--transition-base) var(--transition-timing);
+  background-color: var(--theme-background);
+  min-height: 100vh;
+}
+
+.contentExpanded {
+  width: 86vw;
+}
+
+.contentCollapsed {
+  width: 96.5vw;
+}
+
+.contentAdvanceExpanded {
+  width: 94vw;
+}
+
+.contentAdvanceCollapsed {
+  width: 96.5vw;
+}
+
+
+/* Dashboard Layout */
+.dashboardLayout {
+  transition: all var(--transition-slow) var(--transition-timing);
+  background-color: var(--theme-background);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ==========================================
+   RESPONSIVE LAYOUT
+   ========================================== */
+
+@media screen and (max-width: 1024px) {
+  .sidebarExpanded {
+    width: 20vw;
+    min-width: 180px;
+  }
+  
+  .contentExpanded {
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .backgroundImage {
+    display: none;
+    visibility: hidden;
+  }
+
+  .pages {
+    height: 100vh;
+    width: 100vw;
+    display: block;
+    align-items: left;
+    border-left: none;
+  }
+  
+  .sidebarExpanded {
+    width: 240px;
+    position: fixed;
+    z-index: var(--z-fixed);
+  }
+  
+  .sidebarCollapsed {
+    width: 0;
+    min-width: 0;
+  }
+  
+  .contentExpanded,
+  .contentCollapsed {
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .pages {
+    padding: var(--spacing-base);
+  }
+  
+  .sidebarExpanded {
+    width: 80vw;
+  }
+}

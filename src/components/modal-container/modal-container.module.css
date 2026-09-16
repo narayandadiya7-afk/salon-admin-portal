@@ -1,0 +1,217 @@
+/* ==========================================
+   MODAL COMPONENT STYLES - Theme-Aware
+   ========================================== */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: var(--z-modal-backdrop);
+}
+
+.modalContainer {
+  background-color: var(--theme-surface);
+  box-shadow: var(--shadow-2xl);
+  border: 1px solid var(--theme-border);
+  border-radius: var(--radius-lg);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: popup var(--transition-base) var(--transition-timing);
+  display: block;
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: var(--z-modal);
+}
+
+.modalContainer1 {
+  background-color: transparent;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: popup var(--transition-base) var(--transition-timing);
+  display: block;
+  max-height: 90vh;
+  z-index: var(--z-modal);
+}
+
+/* Modal size variants */
+.modalContainer.small {
+  min-width: 40%;
+  max-width: 500px;
+}
+
+.modalContainer.phone {
+  width: 25%;
+  min-width: 320px;
+  max-width: 400px;
+  overflow-y: auto;
+  height: 75%;
+}
+
+.modalContainer.medium {
+  min-width: 80%;
+  max-width: 1200px;
+  height: 91%;
+}
+
+.modalContainer.extraLarge {
+  min-width: 80%;
+  max-width: 1400px;
+}
+
+.modalContainer1.tab {
+  width: 82%;
+  max-width: 1200px;
+  height: 90vh;
+}
+
+.modalContainer1.large {
+  width: 28%;
+  min-width: 400px;
+  max-width: 600px;
+  height: 90vh;
+}
+
+/* Modal animations */
+@keyframes popup {
+  from {
+    transform: translate(-50%, -50%) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.modalTitle {
+  border-bottom: 1px solid var(--theme-border);
+  padding: var(--spacing-base) var(--spacing-lg);
+  background-color: var(--theme-surface);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.modalTitle span,
+.modalTitle svg {
+  font-weight: var(--font-weight-semibold);
+  color: var(--theme-primary);
+  font-size: var(--font-size-lg);
+}
+
+.modalFooter {
+  border-top: 1px solid var(--theme-border);
+  padding: var(--spacing-base) var(--spacing-lg);
+  background-color: var(--theme-surface);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: flex-end;
+}
+
+.closeButton {
+  padding: var(--spacing-sm);
+  background-color: transparent;
+  border: none;
+  color: var(--theme-text-secondary);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast) var(--transition-timing);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeButton:hover {
+  background-color: var(--theme-hover);
+  color: var(--theme-text);
+}
+
+.closeButton:active {
+  background-color: var(--theme-active);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media screen and (max-width: 1024px) {
+  .modalContainer.small {
+    min-width: 60%;
+  }
+
+  .modalContainer.medium,
+  .modalContainer.extraLarge,
+  .modalContainer1.tab {
+    width: 90%;
+    min-width: auto;
+  }
+
+  .modalContainer1.large {
+    width: 50%;
+    min-width: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modalContainer,
+  .modalContainer1 {
+    width: 95%;
+    max-width: 95%;
+    min-width: auto;
+    max-height: 95vh;
+  }
+
+  .modalContainer.small,
+  .modalContainer.phone,
+  .modalContainer.medium,
+  .modalContainer.extraLarge,
+  .modalContainer1.tab,
+  .modalContainer1.large {
+    width: 95%;
+    min-width: auto;
+    height: auto;
+    max-height: 90vh;
+  }
+
+  .modalTitle {
+    padding: var(--spacing-md) var(--spacing-base);
+  }
+
+  .modalTitle span,
+  .modalTitle svg {
+    font-size: var(--font-size-base);
+  }
+
+  .modalFooter {
+    padding: var(--spacing-md) var(--spacing-base);
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .modalContainer,
+  .modalContainer1 {
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+
+  .modalTitle {
+    border-radius: 0;
+  }
+
+  .modalFooter {
+    border-radius: 0;
+  }
+}

@@ -1,0 +1,713 @@
+/*
+layoutHeader.module.css
+This is the common styling file for the layout header component.
+*/
+.primaryColor {
+  color: var(--bs-primary-dark);
+  font-size: 18px;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    font-size 0.3s ease;
+}
+.primaryColor:hover {
+  font-size: 22px;
+  transform: scale(1.2); /* Scale up the icon */
+  color: var(--bs-primary); /* Optionally change color on hover */
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optionally add shadow */
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f3f3f3;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: var(--bs-primary);
+  border-bottom: 1px solid #ddd;
+  top: 0;
+  width: -webkit-fill-available;
+  z-index: 900;
+  position: fixed;
+  box-sizing: border-box;
+  height: 4.2rem;
+}
+
+.logo {
+  padding: 5px;
+  margin-top: -35px;
+  margin-left: -23px;
+  font-size: 24px;
+  color: var(--bs-primary);
+  text-decoration: none;
+  cursor: pointer;
+  width: fit-content;
+  /* height: 2rem; */
+}
+
+.logoSize {
+  display: flex;
+  align-items: center;
+  width: 10%;
+}
+
+.menuToggle {
+  display: none;
+}
+
+.menuButton {
+  display: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 2;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.menuItem:last-child {
+  margin-right: 0;
+}
+
+.menuItem a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.iconColor {
+  color: var(--bs-primary) !important;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+@media (max-width: 768px) {
+  .menuToggle:checked + .menu {
+    display: block;
+  }
+
+  .menuButton {
+    display: block;
+  }
+
+  .menuToggle:checked + .menuButton .menuIcon {
+    transform: rotate(45deg);
+  }
+
+  .menuToggle:checked + .menuButton .menuIcon:before,
+  .menuToggle:checked + .menuButton .menuIcon:after {
+    transform: rotate(90deg);
+  }
+
+  .menu {
+    position: absolute;
+    background-color: #333;
+    width: 100%;
+    top: 60px;
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    z-index: 1;
+  }
+
+  .menuItem {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.logoContainer {
+  flex: 1;
+}
+
+.logo {
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+
+.menuContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.menuIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.4rem;
+  float: left;
+}
+
+.menuSize {
+  width: 50%;
+}
+
+.menuItem {
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.submenu ul {
+  width: auto;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.submenu li {
+  margin-bottom: 8px;
+}
+
+.submenu img {
+  display: block;
+  width: 25px;
+  height: 25px;
+  margin-right: 8px;
+  float: left;
+}
+
+.submenu {
+  display: block;
+  position: absolute;
+  width: 2rem;
+  color: var(--bs-primary);
+  right: 0;
+  background-color: #fff;
+  padding: 1rem 1.5rem 0.75rem 0rem;
+  box-shadow: rgba(0, 0, 0, 0.125) 0px 10px 50px;
+  width: max-content;
+  z-index: 1;
+  border-radius: 0.3rem;
+  box-sizing: inherit;
+  box-sizing: border-box;
+}
+
+/* When hovering over the menu item, display the submenu */
+.menuItem:active .submenu {
+  display: block;
+}
+
+.menuItem .submenu {
+  display: block;
+}
+
+.menuItem:hover {
+  display: block;
+  cursor: pointer;
+  /* padding: 0; */
+}
+
+.submenu:hover .submenu {
+  left: 100%;
+  top: -2%;
+  display: block;
+  cursor: pointer;
+}
+
+.menuItemLabel {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem !important;
+}
+
+.menuItemContent {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0;
+}
+
+.user {
+  top: 2.48rem !important;
+  right: -120% !important;
+  border-radius: 1.2rem !important;
+  border: none !important;
+  color: var(--bs-primary) !important;
+}
+
+.headerMenu {
+  width: 17%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.userProfile {
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background: #fff;
+  height: 7.5rem !important;
+  width: 14rem !important;
+  padding: 1rem;
+  border-bottom: 1px solid;
+  border-color: var(--bs-primary);
+}
+
+.userBox {
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 4px 5px 15px 23px rgb(118 87 87 / 30%);
+  /* border-radius: 1rem; */
+  /* background-color: white; */
+}
+
+.userBox::before {
+  position: absolute;
+  top: -0.6rem;
+  right: 1.25rem;
+  border-width: 0 10px 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+}
+
+.userProfileIcon {
+  margin: 0.1rem 1rem 0 1rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.logout {
+  display: flex;
+  gap: 1rem;
+  padding: 1.2rem;
+  padding-top: 1rem !important;
+}
+
+.logoutButton {
+  background: var(--bs-primary) none !important;
+  color: rgb(255, 255, 255) !important;
+  border-radius: 0.2rem !important;
+  padding: 0.5rem 0.5rem !important;
+  font-size: 0.7rem !important;
+  outline: none !important;
+  /* border: 3px solid var(--bs-primary) !important; */
+}
+
+.logoutButton:hover {
+  background-color: var(--bs-dark) !important;
+  box-shadow:
+    0px 0px 0px 1px transparent inset,
+    0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset !important;
+  /* color: var(--bs-primary) !important; */
+}
+
+.userName {
+  /* padding: 0.5rem; */
+  padding: 0.9rem 1rem 0rem 1.2rem;
+  font-weight: bold;
+  font-size: 1rem;
+  color: red;
+}
+
+.headerTitle {
+  font-size: 0.85rem;
+  color: #000000;
+  font-weight: 600;
+  padding-left: 0.9rem;
+}
+
+.excelHeader {
+  border-bottom: 1px solid #d4d4d4;
+  display: flex;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  position: fixed;
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+
+.userProfile:hover .userBox {
+  display: flex;
+}
+
+.userProfile:hover .logout {
+  display: block;
+}
+
+.userProfile:hover .userName {
+  border-bottom: none;
+}
+
+.userProfile:hover .submenu {
+  display: none;
+}
+
+.userProfile:hover .menuItemLabel {
+  margin: 0;
+  padding: 0;
+}
+
+.userProfile:hover .menuItemContent {
+  padding: 0;
+}
+
+.userProfile:hover .menu {
+  display: none;
+}
+
+.menuContent {
+  position: absolute;
+  transition: display 1s;
+  padding: 0.5rem;
+  width: 0.5rem;
+}
+
+.userProfileImage {
+  background-color: #ffffff !important;
+  border-radius: 500rem;
+}
+
+.menuItemContainer {
+  position: relative;
+  display: inline-block;
+  padding: 1rem;
+}
+
+.menuItemContainer:hover {
+  background-color: rgba(83, 192, 188, 0.749);
+  cursor: pointer;
+}
+
+.modifiedMenu {
+  display: none;
+  position: absolute;
+  top: 102%;
+  left: -30px;
+  background-color: #fff;
+  padding: 1rem 1.5rem 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px !important;
+}
+
+/* Show the modifiedMenu on hover */
+.menuItemContainer:hover .modifiedMenu {
+  display: block;
+}
+
+/* Create the arrow using ::before pseudo-element */
+.modifiedMenu::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 51px;
+  border-width: 0 8px 8px 8px;
+  border-style: solid;
+  color: #fff !important;
+  border-color: transparent transparent #fff transparent;
+}
+
+.modifiedMenuItems {
+  font-size: 0.9rem !important;
+  display: flex;
+  gap: 2rem;
+  white-space: nowrap;
+}
+
+.modifiedMenuContents {
+  font-size: 0.923rem !important;
+  padding: 0.6rem 0.8rem 0.6rem 0.5rem;
+  text-align: left;
+  min-width: 5rem;
+}
+
+.modifiedMenuContents:hover {
+  background-color: rgba(83, 192, 188, 0.749);
+  color: #fff;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+
+.headersMenu {
+  min-width: 6rem;
+  padding: 0rem 0rem 0.5rem 0.5rem;
+  font-weight: 600;
+  color: rgb(57, 96, 119);
+}
+
+.menuItemContainer:hover .menuIcon {
+  filter: brightness(0) invert(1);
+  /* Change the color to white */
+}
+
+.profileWrapper {
+  color: #535353;
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.8rem;
+}
+
+.profileLabel {
+  width: 3.5vw;
+  color: grey;
+  font-size: 13px;
+  padding-left: 7px;
+}
+
+.profileContent {
+  width: 30vw;
+  color: #000;
+  font-size: 14px;
+  /* overflow: hidden; */
+  padding-left: 15px;
+}
+
+@media screen and (max-width: 700px) {
+  .profileContent {
+    width: 32vw;
+  }
+}
+
+.profileContent1 {
+  /* cursor: pointer; */
+  width: 100vw;
+  color: #000;
+  font-size: 14px;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  /* margin-top: 4vh; */
+  color: red;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 700px) {
+  .sidebarSize {
+    width: 30%;
+  }
+}
+
+.sideBAR {
+  width: 20%;
+}
+
+/* Default width for larger screens */
+.drawer {
+  width: 20% !important;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 700px) {
+  .drawer {
+    width: 100% !important;
+    /* Change the width for screens up to 700px */
+  }
+}
+
+.displayNameO {
+  margin-left: 15px;
+  white-space: nowrap;
+}
+
+.nameOfheader {
+  padding-left: 6px;
+  color: black;
+}
+
+.nameOfHeader2 {
+  font-weight: bold;
+  color: red;
+  font-size: 1.3rem;
+}
+
+.dropdown {
+  padding-top: 2%;
+  /* padding-right: 4px; */
+  width: 100% !important;
+  margin-right: 40px;
+  border: none !important;
+  /* padding-right: 10%; */
+  padding-left: 0% !important;
+}
+
+.dropdown div div {
+  border: none !important;
+}
+
+.dropdown div div:focus {
+  border: none !important;
+}
+.dropdown div div:hover {
+  border: none !important;
+}
+.pencil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6%;
+  white-space: nowrap;
+}
+
+.penciil {
+  color: black;
+  height: 1vh;
+  padding-right: 14px;
+}
+
+.currentmodule {
+  display: flex;
+  flex-direction: row;
+}
+
+.currentModuleheading {
+  color: black;
+  font-size: 0.9rem;
+  padding-top: 12px;
+  text-align: center;
+}
+.backgroundDiv {
+  background-color: #efefef;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 2px #000000;
+  width: 250px !important;
+}
+.tooltipContainer {
+  z-index: 10000 !important;
+}
+.moduleIcon {
+  font-size: 1rem;
+  color: grey;
+  padding-top: 15px;
+  padding-left: 8px;
+}
+.welcomelogo {
+  margin-left: 3vw;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.displayNamee {
+  white-space: nowrap;
+  color: black;
+  padding-top: 5px;
+  font-size: 1.1rem;
+  padding-left: 6px;
+}
+
+.adminContainer {
+  cursor: pointer;
+}
+.adminContainer:hover .adminone,
+.adminContainer:hover .Admintwo {
+  color: white;
+}
+
+.containersupervisor:hover .applicationone,
+.containersupervisor:hover .applicationtwo {
+  color: white;
+}
+
+.containersupervisor {
+  cursor: pointer;
+}
+
+.containerSup:hover .supervisorone,
+.containerSup:hover .supervisortwo {
+  color: white;
+}
+.containerSup {
+  cursor: pointer;
+}
+.adminone {
+  position: relative;
+  top: 12px;
+  position: relative;
+  left: 45px;
+  color: #ffccd0;
+}
+.Admintwo {
+  position: relative;
+  top: 12px;
+  position: relative;
+  left: 35px;
+  font-weight: bold;
+  color: #ffccd0;
+}
+
+.adminthree {
+  border: 1px solid #ffccd0;
+  position: relative;
+  top: 15px;
+  color: #ffccd0;
+}
+.applicationone {
+  position: relative;
+  top: 25px;
+  position: relative;
+  left: 44px;
+  /* color: #e1000f; */
+  color: #ffccd0;
+}
+.applicationtwo {
+  position: relative;
+  top: 25px;
+  position: relative;
+  left: 20px;
+  font-weight: bold;
+  color: #ffccd0;
+}
+.applicationthree {
+  border: 1px solid;
+  position: relative;
+  top: 30px;
+  color: #ffccd0;
+}
+.supervisorone {
+  position: relative;
+  top: 40px;
+  position: relative;
+  left: 44px;
+  /* color: #e1000f; */
+  color: #ffccd0;
+}
+.supervisortwo {
+  position: relative;
+  top: 38px;
+  position: relative;
+  left: 20px;
+  font-weight: bold;
+  color: #ffccd0;
+}
+.supervisorthree {
+  border: 1px solid #ffccd0;
+  position: relative;
+  top: 43px;
+  color: #ffccd0;
+}
+.bgcolor {
+  background-color: #e1000f;
+  height: 100vh;
+  color: #ffccd0;
+}
+.gearicon {
+  padding-top: 2.2px;
+  cursor: pointer;
+}
+.profileContentDropdown {
+  /* width: 30vw; */
+  color: #000;
+  font-size: 12px;
+  position: relative;
+  right: 90px;
+  bottom: 5px;
+}
+
+.logoutDiv {
+  padding: 1rem;
+}

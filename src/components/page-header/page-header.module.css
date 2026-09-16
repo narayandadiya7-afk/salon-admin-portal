@@ -1,0 +1,60 @@
+/*
+*  page-header.module.css
+*  This css used to styled the pageHeader component
+*/
+
+.mainHeader {
+  background-color: var(--bs-secondary-light);
+  display: flex;
+  padding: 0.6rem 0.75rem 0.5rem 0.75rem;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--bs-primary-gradient);
+  border: 1px solid transparent;
+  /* border-radius: 2rem; */
+  /* box-shadow: 0px 0px 20px 2px var(--primary-shadow); */
+}
+
+.headerTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.headerItems {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: center;
+  width: fit-content;
+}
+
+.header.small {
+  font-size: smaller;
+}
+
+.header.basic {
+  font-size: small;
+}
+
+.header.medium {
+  font-size: medium;
+}
+
+.header.large {
+  font-size: large;
+}
+
+.title {
+  color: var(--bs-primary-dark);
+  margin: 0;
+  font-size: 1.2rem !important;
+}
+
+.headerIcon {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  color: var(--bs-primary-dark);
+}
