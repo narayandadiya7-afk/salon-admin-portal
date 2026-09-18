@@ -28,7 +28,7 @@ export default function SidebarComponent(props: TProps) {
     navigate(url); // Use navigate to change routes
   };
 
-  const MenuItem = (item: TMenuItem) => {
+  const MenuItem = ({ item }: { item: TMenuItem }) => {
     const [isSubMenuVisible, setIsSubMenuVisible] = useState(false);
     const [isActive, setIsActive] = useState(false);
 
@@ -109,7 +109,7 @@ export default function SidebarComponent(props: TProps) {
         </div>
         {isSubMenuVisible && hasChildren(item) && (
           <div className={styles.sub_menu}>
-            {item.children.map((subItem: any, index: any) => (
+            {item.children?.map((subItem: any, index: any) => (
               <MenuItem key={index} item={subItem} />
             ))}
           </div>
